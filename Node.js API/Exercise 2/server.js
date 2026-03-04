@@ -14,8 +14,10 @@ const server = http.createServer(async (req, res) => {
 
 
   if (urlObj.pathname === '/api' && req.method === 'GET') {
+
     let filterDestination = getdatabyQueryParams(destinations, queryObj)
     sendJSONresponse(res, 200, filterDestination)
+    
   }
 
   else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
